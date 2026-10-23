@@ -1,0 +1,455 @@
+I	cpuid	0x411fd210	inputs	1024	passes	7
+B	f_ff	-	nop	1156	1156	1156
+B	d_dd	-	nop	1356	1356	1356
+B	32_32	-	nop	931	931	931
+B	64_32	-	nop	1032	1032	1032
+B	32_64	-	nop	1025	1025	1025
+B	64_64	-	nop	1126	1126	1126
+R	addsf3	normal	asm	4142	4142	4142
+R	addsf3	normal	legacy	12479	12479	12479
+R	addsf3	normal	libc	42398	42398	42398
+M	addsf3	normal	legacy	0	1024
+M	addsf3	normal	asm	0	1024
+R	addsf3	subnormal	asm	5029	5029	5029
+R	addsf3	subnormal	legacy	12533	12533	12533
+R	addsf3	subnormal	libc	39782	39782	39782
+M	addsf3	subnormal	legacy	0	1024
+M	addsf3	subnormal	asm	0	1024
+R	addsf3	special	asm	4956	4956	4956
+R	addsf3	special	legacy	4656	4656	4656
+R	addsf3	special	libc	14205	14205	14205
+M	addsf3	special	legacy	0	1024
+M	addsf3	special	asm	0	1024
+R	addsf3	cancellation	asm	5403	5403	5403
+R	addsf3	cancellation	legacy	11942	11942	11942
+R	addsf3	cancellation	libc	40232	40232	40232
+M	addsf3	cancellation	legacy	0	1024
+M	addsf3	cancellation	asm	0	1024
+R	subsf3	normal	asm	4162	4162	4162
+R	subsf3	normal	legacy	12784	12784	12784
+R	subsf3	normal	libc	42446	42446	42446
+M	subsf3	normal	legacy	0	1024
+M	subsf3	normal	asm	0	1024
+R	subsf3	subnormal	asm	5030	5030	5030
+R	subsf3	subnormal	legacy	12846	12846	12846
+R	subsf3	subnormal	libc	39593	39593	39593
+M	subsf3	subnormal	legacy	0	1024
+M	subsf3	subnormal	asm	0	1024
+R	subsf3	special	asm	4956	4956	4956
+R	subsf3	special	legacy	4956	4956	4956
+R	subsf3	special	libc	14117	14117	14117
+M	subsf3	special	legacy	0	1024
+M	subsf3	special	asm	0	1024
+R	subsf3	cancellation	asm	4855	4855	4855
+R	subsf3	cancellation	legacy	11906	11906	11906
+R	subsf3	cancellation	libc	41377	41377	41377
+M	subsf3	cancellation	legacy	0	1024
+M	subsf3	cancellation	asm	0	1024
+R	mulsf3	normal	asm	4156	4156	4156
+R	mulsf3	normal	legacy	7112	7112	7112
+R	mulsf3	normal	libc	35114	35114	35114
+M	mulsf3	normal	legacy	0	1024
+M	mulsf3	normal	asm	0	1024
+R	mulsf3	subnormal	asm	11358	11358	11358
+R	mulsf3	subnormal	legacy	10256	10256	10256
+R	mulsf3	subnormal	libc	34517	34517	34517
+M	mulsf3	subnormal	legacy	0	1024
+M	mulsf3	subnormal	asm	0	1024
+R	mulsf3	special	asm	5105	5105	5105
+R	mulsf3	special	legacy	4306	4306	4306
+R	mulsf3	special	libc	13904	13904	13904
+M	mulsf3	special	legacy	0	1024
+M	mulsf3	special	asm	0	1024
+R	mulsf3	extreme	asm	6409	6409	6409
+R	mulsf3	extreme	legacy	5856	5856	5856
+R	mulsf3	extreme	libc	31673	31673	31673
+M	mulsf3	extreme	legacy	0	1024
+M	mulsf3	extreme	asm	0	1024
+R	divsf3	normal	asm	6456	6456	6456
+R	divsf3	normal	legacy	10398	10398	10398
+R	divsf3	normal	libc	47850	47850	47850
+M	divsf3	normal	legacy	0	1024
+M	divsf3	normal	asm	0	1024
+R	divsf3	subnormal	asm	12105	12105	12105
+R	divsf3	subnormal	legacy	14402	14402	14402
+R	divsf3	subnormal	libc	47736	47736	47736
+M	divsf3	subnormal	legacy	0	1024
+M	divsf3	subnormal	asm	0	1024
+R	divsf3	special	asm	5605	5605	5605
+R	divsf3	special	legacy	4506	4506	4506
+R	divsf3	special	libc	18530	18530	18530
+M	divsf3	special	legacy	0	1024
+M	divsf3	special	asm	0	1024
+R	divsf3	extreme	asm	7956	7956	7956
+R	divsf3	extreme	legacy	9448	9448	9448
+R	divsf3	extreme	libc	45645	45645	45645
+M	divsf3	extreme	legacy	0	1024
+M	divsf3	extreme	asm	0	1024
+R	adddf3	normal	asm	6145	6145	6145
+R	adddf3	normal	legacy	15058	15058	15058
+R	adddf3	normal	libc	57319	57319	57319
+M	adddf3	normal	legacy	0	1024
+M	adddf3	normal	asm	0	1024
+R	adddf3	subnormal	asm	5812	5812	5812
+R	adddf3	subnormal	legacy	20249	20249	20249
+R	adddf3	subnormal	libc	52261	52261	52261
+M	adddf3	subnormal	legacy	0	1024
+M	adddf3	subnormal	asm	0	1024
+R	adddf3	special	asm	8606	8606	8606
+R	adddf3	special	legacy	5306	5306	5306
+R	adddf3	special	libc	15925	15925	15925
+M	adddf3	special	legacy	0	1024
+M	adddf3	special	asm	0	1024
+R	adddf3	cancellation	asm	8753	8753	8753
+R	adddf3	cancellation	legacy	14136	14136	14136
+R	adddf3	cancellation	libc	54292	54292	54292
+M	adddf3	cancellation	legacy	0	1024
+M	adddf3	cancellation	asm	0	1024
+R	subdf3	normal	asm	6158	6158	6158
+R	subdf3	normal	legacy	15353	15353	15353
+R	subdf3	normal	libc	56855	56855	56855
+M	subdf3	normal	legacy	0	1024
+M	subdf3	normal	asm	0	1024
+R	subdf3	subnormal	asm	5701	5701	5701
+R	subdf3	subnormal	legacy	20605	20605	20605
+R	subdf3	subnormal	libc	51770	51770	51770
+M	subdf3	subnormal	legacy	0	1024
+M	subdf3	subnormal	asm	0	1024
+R	subdf3	special	asm	8406	8406	8406
+R	subdf3	special	legacy	5606	5606	5606
+R	subdf3	special	libc	15698	15698	15698
+M	subdf3	special	legacy	0	1024
+M	subdf3	special	asm	0	1024
+R	subdf3	cancellation	asm	7055	7055	7055
+R	subdf3	cancellation	legacy	13056	13056	13056
+R	subdf3	cancellation	libc	56104	56104	56104
+M	subdf3	cancellation	legacy	0	1024
+M	subdf3	cancellation	asm	0	1024
+R	muldf3	normal	asm	7306	7306	7306
+R	muldf3	normal	legacy	8765	8765	8765
+R	muldf3	normal	libc	57585	57585	57585
+M	muldf3	normal	legacy	0	1024
+M	muldf3	normal	asm	0	1024
+R	muldf3	subnormal	asm	19206	19206	19206
+R	muldf3	subnormal	legacy	14770	14770	14770
+R	muldf3	subnormal	libc	55364	55364	55364
+M	muldf3	subnormal	legacy	0	1024
+M	muldf3	subnormal	asm	0	1024
+R	muldf3	special	asm	8956	8956	8956
+R	muldf3	special	legacy	5606	5606	5606
+R	muldf3	special	libc	15211	15211	15211
+M	muldf3	special	legacy	0	1024
+M	muldf3	special	asm	0	1024
+R	muldf3	extreme	asm	9206	9206	9206
+R	muldf3	extreme	legacy	8264	8264	8264
+R	muldf3	extreme	libc	50385	50385	50385
+M	muldf3	extreme	legacy	0	1024
+M	muldf3	extreme	asm	0	1024
+R	divdf3	normal	asm	12215	12215	12215
+R	divdf3	normal	legacy	16592	16592	16592
+R	divdf3	normal	libc	116653	116653	116653
+M	divdf3	normal	legacy	0	1024
+M	divdf3	normal	asm	0	1024
+R	divdf3	subnormal	asm	21432	21432	21432
+R	divdf3	subnormal	legacy	22504	22504	22504
+R	divdf3	subnormal	libc	116405	116405	116405
+M	divdf3	subnormal	legacy	0	1024
+M	divdf3	subnormal	asm	0	1024
+R	divdf3	special	asm	8556	8556	8556
+R	divdf3	special	legacy	5956	5956	5956
+R	divdf3	special	libc	20627	20627	20627
+M	divdf3	special	legacy	0	1024
+M	divdf3	special	asm	0	1024
+R	divdf3	extreme	asm	15919	15919	15919
+R	divdf3	extreme	legacy	15096	15096	15096
+R	divdf3	extreme	libc	111360	111360	111360
+M	divdf3	extreme	legacy	0	1024
+M	divdf3	extreme	asm	0	1024
+R	negsf2	normal	legacy	1031	1031	1031
+R	negsf2	normal	libc	1031	1031	1031
+M	negsf2	normal	legacy	0	1024
+R	negdf2	normal	legacy	1226	1226	1226
+R	negdf2	normal	libc	1226	1226	1226
+M	negdf2	normal	legacy	0	1024
+R	extendsfdf2	normal	asm	1832	1832	1832
+R	extendsfdf2	normal	legacy	2932	2932	2932
+R	extendsfdf2	normal	libc	28272	28272	28272
+M	extendsfdf2	normal	legacy	0	1024
+M	extendsfdf2	normal	asm	0	1024
+R	extendsfdf2	subnormal	asm	3932	3932	3932
+R	extendsfdf2	subnormal	legacy	4132	4132	4132
+R	extendsfdf2	subnormal	libc	28277	28277	28277
+M	extendsfdf2	subnormal	legacy	0	1024
+M	extendsfdf2	subnormal	asm	0	1024
+R	extendsfdf2	special	asm	3032	3032	3032
+R	extendsfdf2	special	legacy	2632	2632	2632
+R	extendsfdf2	special	libc	2582	2582	2582
+M	extendsfdf2	special	legacy	0	1024
+M	extendsfdf2	special	asm	0	1024
+R	truncdfsf2	normal	asm	2325	2325	2325
+R	truncdfsf2	normal	legacy	4918	4918	4918
+R	truncdfsf2	normal	libc	27305	27305	27305
+M	truncdfsf2	normal	legacy	0	1024
+M	truncdfsf2	normal	asm	0	1024
+R	truncdfsf2	subnormal	asm	6818	6818	6818
+R	truncdfsf2	subnormal	legacy	8826	8826	8826
+R	truncdfsf2	subnormal	libc	27118	27118	27118
+M	truncdfsf2	subnormal	legacy	0	1024
+M	truncdfsf2	subnormal	asm	0	1024
+R	truncdfsf2	special	asm	3825	3825	3825
+R	truncdfsf2	special	legacy	3875	3875	3875
+R	truncdfsf2	special	libc	3675	3675	3675
+M	truncdfsf2	special	legacy	0	1024
+M	truncdfsf2	special	asm	0	1024
+R	truncdfsf2	overflow	asm	3725	3725	3725
+R	truncdfsf2	overflow	legacy	4125	4125	4125
+R	truncdfsf2	overflow	libc	20129	20129	20129
+M	truncdfsf2	overflow	legacy	0	1024
+M	truncdfsf2	overflow	asm	0	1024
+R	fixsfsi	normal	asm	1831	1831	1831
+R	fixsfsi	normal	legacy	2731	2731	2731
+R	fixsfsi	normal	libc	3131	3131	3131
+M	fixsfsi	normal	legacy	0	1024
+M	fixsfsi	normal	asm	0	1024
+R	fixsfsi	small	asm	1831	1831	1831
+R	fixsfsi	small	legacy	1131	1131	1131
+R	fixsfsi	small	libc	2031	2031	2031
+M	fixsfsi	small	legacy	0	1024
+M	fixsfsi	small	asm	0	1024
+R	fixsfsi	overflow	asm	2031	2031	2031
+R	fixsfsi	overflow	legacy	1831	1831	1831
+R	fixsfsi	overflow	libc	2531	2531	2531
+M	fixsfsi	overflow	legacy	0	1024
+M	fixsfsi	overflow	asm	0	1024
+R	fixsfsi	special	asm	1981	1981	1981
+R	fixsfsi	special	legacy	1831	1831	1831
+R	fixsfsi	special	libc	2531	2531	2531
+M	fixsfsi	special	legacy	0	1024
+M	fixsfsi	special	asm	512	1024	0xffcceef5	-	0x00000000	0x80000000
+R	fixsfdi	normal	asm	2575	2575	2575
+R	fixsfdi	normal	legacy	3979	3979	3979
+R	fixsfdi	normal	libc	4418	4418	4418
+M	fixsfdi	normal	legacy	0	1024
+M	fixsfdi	normal	asm	0	1024
+R	fixsfdi	small	asm	2578	2578	2578
+R	fixsfdi	small	legacy	1332	1332	1332
+R	fixsfdi	small	libc	2232	2232	2232
+M	fixsfdi	small	legacy	0	1024
+M	fixsfdi	small	asm	0	1024
+R	fixsfdi	overflow	asm	2628	2628	2628
+R	fixsfdi	overflow	legacy	2132	2132	2132
+R	fixsfdi	overflow	libc	2932	2932	2932
+M	fixsfdi	overflow	legacy	0	1024
+M	fixsfdi	overflow	asm	0	1024
+R	fixsfdi	special	asm	2577	2577	2577
+R	fixsfdi	special	legacy	2132	2132	2132
+R	fixsfdi	special	libc	2932	2932	2932
+M	fixsfdi	special	legacy	0	1024
+M	fixsfdi	special	asm	512	1024	0x7fe6b75c	-	0x0000000000000000	0x7fffffffffffffff
+R	fixdfsi	normal	asm	2625	2625	2625
+R	fixdfsi	normal	legacy	4025	4025	4025
+R	fixdfsi	normal	libc	3725	3725	3725
+M	fixdfsi	normal	legacy	0	1024
+M	fixdfsi	normal	asm	0	1024
+R	fixdfsi	small	asm	2625	2625	2625
+R	fixdfsi	small	legacy	1325	1325	1325
+R	fixdfsi	small	libc	2025	2025	2025
+M	fixdfsi	small	legacy	0	1024
+M	fixdfsi	small	asm	0	1024
+R	fixdfsi	overflow	asm	3025	3025	3025
+R	fixdfsi	overflow	legacy	2025	2025	2025
+R	fixdfsi	overflow	libc	2625	2625	2625
+M	fixdfsi	overflow	legacy	0	1024
+M	fixdfsi	overflow	asm	0	1024
+R	fixdfsi	special	asm	2975	2975	2975
+R	fixdfsi	special	legacy	2025	2025	2025
+R	fixdfsi	special	libc	2625	2625	2625
+M	fixdfsi	special	legacy	0	1024
+M	fixdfsi	special	asm	512	1024	0xfffd9a0bc0e4cd9f	-	0x00000000	0x80000000
+R	fixdfdi	normal	asm	3414	3414	3414
+R	fixdfdi	normal	legacy	5842	5842	5842
+R	fixdfdi	normal	libc	6242	6242	6242
+M	fixdfdi	normal	legacy	0	1024
+M	fixdfdi	normal	asm	0	1024
+R	fixdfdi	small	asm	3438	3438	3438
+R	fixdfdi	small	legacy	3226	3226	3226
+R	fixdfdi	small	libc	3826	3826	3826
+M	fixdfdi	small	legacy	0	1024
+M	fixdfdi	small	asm	0	1024
+R	fixdfdi	overflow	asm	3377	3377	3377
+R	fixdfdi	overflow	legacy	4026	4026	4026
+R	fixdfdi	overflow	libc	4826	4826	4826
+M	fixdfdi	overflow	legacy	0	1024
+M	fixdfdi	overflow	asm	0	1024
+R	fixdfdi	special	asm	3325	3325	3325
+R	fixdfdi	special	legacy	4026	4026	4026
+R	fixdfdi	special	libc	4826	4826	4826
+M	fixdfdi	special	legacy	0	1024
+M	fixdfdi	special	asm	512	1024	0x7ff8597e94d6f7f9	-	0x0000000000000000	0x7fffffffffffffff
+R	fixunssfsi	normal	asm	1631	1631	1631
+R	fixunssfsi	normal	legacy	2511	2511	2511
+R	fixunssfsi	normal	libc	2811	2811	2811
+M	fixunssfsi	normal	legacy	0	1024
+M	fixunssfsi	normal	asm	0	1024
+R	fixunssfsi	small	asm	1631	1631	1631
+R	fixunssfsi	small	legacy	1582	1582	1582
+R	fixunssfsi	small	libc	1981	1981	1981
+M	fixunssfsi	small	legacy	0	1024
+M	fixunssfsi	small	asm	0	1024
+R	fixunssfsi	overflow	asm	2031	2031	2031
+R	fixunssfsi	overflow	legacy	1831	1831	1831
+R	fixunssfsi	overflow	libc	2331	2331	2331
+M	fixunssfsi	overflow	legacy	0	1024
+M	fixunssfsi	overflow	asm	0	1024
+R	fixunssfsi	special	asm	1878	1878	1878
+R	fixunssfsi	special	legacy	1629	1629	1629
+R	fixunssfsi	special	libc	2129	2129	2129
+M	fixunssfsi	special	legacy	0	1024
+M	fixunssfsi	special	asm	252	1024	0x7fff4916	-	0x00000000	0xffffffff
+R	fixunssfdi	normal	asm	2232	2232	2232
+R	fixunssfdi	normal	legacy	3722	3722	3722
+R	fixunssfdi	normal	libc	3722	3722	3722
+M	fixunssfdi	normal	legacy	0	1024
+M	fixunssfdi	normal	asm	0	1024
+R	fixunssfdi	small	asm	1974	1974	1974
+R	fixunssfdi	small	legacy	1626	1626	1626
+R	fixunssfdi	small	libc	2126	2126	2126
+M	fixunssfdi	small	legacy	0	1024
+M	fixunssfdi	small	asm	0	1024
+R	fixunssfdi	overflow	asm	2332	2332	2332
+R	fixunssfdi	overflow	legacy	2432	2432	2432
+R	fixunssfdi	overflow	libc	2732	2732	2732
+M	fixunssfdi	overflow	legacy	0	1024
+M	fixunssfdi	overflow	asm	0	1024
+R	fixunssfdi	special	asm	2047	2047	2047
+R	fixunssfdi	special	legacy	1915	1915	1915
+R	fixunssfdi	special	libc	2319	2319	2319
+M	fixunssfdi	special	legacy	0	1024
+M	fixunssfdi	special	asm	259	1024	0x7ff0e380	-	0x0000000000000000	0xffffffffffffffff
+R	fixunsdfsi	normal	asm	2325	2325	2325
+R	fixunsdfsi	normal	legacy	3325	3325	3325
+R	fixunsdfsi	normal	libc	3625	3625	3625
+M	fixunsdfsi	normal	legacy	0	1024
+M	fixunsdfsi	normal	asm	0	1024
+R	fixunsdfsi	small	asm	2325	2325	2325
+R	fixunsdfsi	small	legacy	1629	1629	1629
+R	fixunsdfsi	small	libc	2327	2327	2327
+M	fixunsdfsi	small	legacy	0	1024
+M	fixunsdfsi	small	asm	0	1024
+R	fixunsdfsi	overflow	asm	3025	3025	3025
+R	fixunsdfsi	overflow	legacy	2125	2125	2125
+R	fixunsdfsi	overflow	libc	2525	2525	2525
+M	fixunsdfsi	overflow	legacy	0	1024
+M	fixunsdfsi	overflow	asm	0	1024
+R	fixunsdfsi	special	asm	2745	2745	2745
+R	fixunsdfsi	special	legacy	1742	1742	1742
+R	fixunsdfsi	special	libc	2333	2333	2333
+M	fixunsdfsi	special	legacy	0	1024
+M	fixunsdfsi	special	asm	282	1024	0x7fff2c5ba74644d4	-	0x00000000	0xffffffff
+R	fixunsdfdi	normal	asm	3126	3126	3126
+R	fixunsdfdi	normal	legacy	4920	4920	4920
+R	fixunsdfdi	normal	libc	4389	4389	4389
+M	fixunsdfdi	normal	legacy	0	1024
+M	fixunsdfdi	normal	asm	0	1024
+R	fixunsdfdi	small	asm	3126	3126	3126
+R	fixunsdfdi	small	legacy	1902	1902	1902
+R	fixunsdfdi	small	libc	2461	2461	2461
+M	fixunsdfdi	small	legacy	0	1024
+M	fixunsdfdi	small	asm	0	1024
+R	fixunsdfdi	overflow	asm	3426	3426	3426
+R	fixunsdfdi	overflow	legacy	2626	2626	2626
+R	fixunsdfdi	overflow	libc	2926	2926	2926
+M	fixunsdfdi	overflow	legacy	0	1024
+M	fixunsdfdi	overflow	asm	0	1024
+R	fixunsdfdi	special	asm	3272	3272	3272
+R	fixunsdfdi	special	legacy	2062	2062	2062
+R	fixunsdfdi	special	libc	2567	2567	2567
+M	fixunsdfdi	special	legacy	0	1024
+M	fixunsdfdi	special	asm	249	1024	0x7ffaa9cb5d3a4346	-	0x0000000000000000	0xffffffffffffffff
+R	floatsisf	exact	asm	2131	2131	2131
+R	floatsisf	exact	legacy	3031	3031	3031
+R	floatsisf	exact	libc	18680	18680	18680
+M	floatsisf	exact	legacy	0	1024
+M	floatsisf	exact	asm	0	1024
+R	floatsisf	full	asm	2325	2325	2325
+R	floatsisf	full	legacy	3725	3725	3725
+R	floatsisf	full	libc	20230	20230	20230
+M	floatsisf	full	legacy	0	1024
+M	floatsisf	full	asm	0	1024
+R	floatdisf	exact	asm	3122	3122	3122
+R	floatdisf	exact	legacy	4125	4125	4125
+R	floatdisf	exact	libc	19473	19473	19473
+M	floatdisf	exact	legacy	0	1024
+M	floatdisf	exact	asm	0	1024
+R	floatdisf	full	asm	3175	3175	3175
+R	floatdisf	full	legacy	7625	7625	7625
+R	floatdisf	full	libc	21071	21071	21071
+M	floatdisf	full	legacy	0	1024
+M	floatdisf	full	asm	0	1024
+R	floatsidf	exact	asm	2332	2332	2332
+R	floatsidf	exact	legacy	3632	3632	3632
+R	floatsidf	exact	libc	22932	22932	22932
+M	floatsidf	exact	legacy	0	1024
+M	floatsidf	exact	asm	0	1024
+R	floatsidf	full	asm	2332	2332	2332
+R	floatsidf	full	legacy	3632	3632	3632
+R	floatsidf	full	libc	22932	22932	22932
+M	floatsidf	full	legacy	0	1024
+M	floatsidf	full	asm	0	1024
+R	floatdidf	exact	asm	2877	2877	2877
+R	floatdidf	exact	legacy	5826	5826	5826
+R	floatdidf	exact	libc	23726	23726	23726
+M	floatdidf	exact	legacy	0	1024
+M	floatdidf	exact	asm	0	1024
+R	floatdidf	full	asm	4024	4024	4024
+R	floatdidf	full	legacy	7424	7424	7424
+R	floatdidf	full	libc	27569	27569	27569
+M	floatdidf	full	legacy	0	1024
+M	floatdidf	full	asm	0	1024
+R	floatunsisf	exact	asm	1631	1631	1631
+R	floatunsisf	exact	legacy	2031	2031	2031
+R	floatunsisf	exact	libc	18331	18331	18331
+M	floatunsisf	exact	legacy	0	1024
+M	floatunsisf	exact	asm	0	1024
+R	floatunsisf	full	asm	1826	1826	1826
+R	floatunsisf	full	legacy	3123	3123	3123
+R	floatunsisf	full	libc	19900	19900	19900
+M	floatunsisf	full	legacy	0	1024
+M	floatunsisf	full	asm	0	1024
+R	floatundisf	exact	asm	2825	2825	2825
+R	floatundisf	exact	legacy	3025	3025	3025
+R	floatundisf	exact	libc	18825	18825	18825
+M	floatundisf	exact	legacy	0	1024
+M	floatundisf	exact	asm	0	1024
+R	floatundisf	full	asm	2880	2880	2880
+R	floatundisf	full	legacy	6725	6725	6725
+R	floatundisf	full	libc	20426	20426	20426
+M	floatundisf	full	legacy	0	1024
+M	floatundisf	full	asm	0	1024
+R	floatunsidf	exact	asm	1932	1932	1932
+R	floatunsidf	exact	legacy	2532	2532	2532
+R	floatunsidf	exact	libc	22632	22632	22632
+M	floatunsidf	exact	legacy	0	1024
+M	floatunsidf	exact	asm	0	1024
+R	floatunsidf	full	asm	1932	1932	1932
+R	floatunsidf	full	legacy	2532	2532	2532
+R	floatunsidf	full	libc	22632	22632	22632
+M	floatunsidf	full	legacy	0	1024
+M	floatunsidf	full	asm	0	1024
+R	floatundidf	exact	asm	2226	2226	2226
+R	floatundidf	exact	legacy	4326	4326	4326
+R	floatundidf	exact	libc	23126	23126	23126
+M	floatundidf	exact	legacy	0	1024
+M	floatundidf	exact	asm	0	1024
+R	floatundidf	full	asm	3378	3378	3378
+R	floatundidf	full	legacy	6224	6224	6224
+R	floatundidf	full	libc	26974	26974	26974
+M	floatundidf	full	legacy	0	1024
+M	floatundidf	full	asm	0	1024
+END
+P	addsf3(1,1)	start
+P	addsf3(1,1)	ok	0x40000000
+P	adddf3(1,1)	start
+P	adddf3(1,1)	ok	0x4000000000000000
+P	adddf3(1,2^-60)	start
+FAULT	3	0xfffffff9	0x00100000	adddf3(1,2^-60)	recursion-probe	libc-closed
