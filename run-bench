@@ -1,0 +1,125 @@
+#!/usr/bin/env bash
+#
+# Benchmark compiler-rt's soft-float builtins (shipped asm / legacy C /
+# LLVM-libc backed) on a Raspberry Pi Pico 2 (RP2350, Cortex-M33).
+#
+#   1. build the RAM-only image                      (scripts/build.py)
+#   2. back up the results area (last 64K of flash)
+#   3. load the image into SRAM and run it           (picotool load -x)
+#   4. firmware writes TSV results to flash, reboots into BOOTSEL
+#   5. read the results back, restore the flash area
+#   6. render results/<date>-<llvm-sha>.md          (scripts/report.py)
+#
+# The board must start in BOOTSEL mode (hold BOOTSEL while plugging in);
+# the firmware returns it to BOOTSEL itself, so runs can be repeated.
+#
+# Env:
+#   LLVM_SRC  llvm-project checkout (default: the enclosing one)
+#   PICOTOOL  picotool binary (default: third_party/picotool-build/picotool,
+#             built on first run)
+#
+# Usage: ./run-bench [--no-build]
+
+set -euo pipefail
+
+HERE="$(cd "$(dirname "$0")" && pwd)"
+BUILD="$HERE/build"
+TP="$HERE/third_party"
+PICOTOOL="${PICOTOOL:-$TP/picotool-build/picotool}"
+RESULTS_START=0x103F0000
+RESULTS_END=0x10400000
+TIMEOUT_S=900
+
+log() { echo "== $*" >&2; }
+
+setup_picotool() {
+  [ -x "$PICOTOOL" ] && return
+  log "fetching + building picotool"
+  mkdir -p "$TP"
+  [ -d "$TP/pico-sdk" ] ||
+    git clone -q --depth 1 https://github.com/raspberrypi/pico-sdk.git "$TP/pico-sdk"
+  [ -d "$TP/picotool" ] ||
+    git clone -q --depth 1 https://github.com/raspberrypi/picotool.git "$TP/picotool"
+  cmake -S "$TP/picotool" -B "$TP/picotool-build" -G Ninja \
+    -DPICO_SDK_PATH="$TP/pico-sdk" -DCMAKE_BUILD_TYPE=Release >/dev/null
+  cmake --build "$TP/picotool-build" >/dev/null
+}
+
+check_access() {
+  local out
+  if out=$("$PICOTOOL" info 2>&1); then
+    return
+  fi
+  echo "$out" >&2
+  if grep -q "appears to be in BOOTSEL mode" <<<"$out"; then
+    cat >&2 <<EOF
+
+picotool cannot open the USB device. Install its udev rule once:
+
+  sudo cp $TP/picotool/udev/60-picotool.rules /etc/udev/rules.d/
+  sudo udevadm control --reload-rules && sudo udevadm trigger
+
+then unplug/replug the board while holding BOOTSEL.
+EOF
+  else
+    echo "Put the Pico 2 in BOOTSEL mode (hold BOOTSEL, plug in)." >&2
+  fi
+  exit 1
+}
+
+wait_bootsel() {
+  local start=$SECONDS
+  until "$PICOTOOL" info >/dev/null 2>&1; do
+    if ((SECONDS - start > TIMEOUT_S)); then
+      echo "ERROR: board did not return to BOOTSEL within ${TIMEOUT_S}s" >&2
+      exit 1
+    fi
+    sleep 2
+  done
+}
+
+all_ff() { python3 -c 'import sys; d=open(sys.argv[1],"rb").read(); sys.exit(0 if d.count(255)==len(d) else 1)' "$1"; }
+
+main() {
+  local build=1
+  [ "${1:-}" = --no-build ] && build=0
+
+  setup_picotool
+  export PICOTOOL
+  if [ "$build" = 1 ]; then
+    log "build"
+    python3 "$HERE/scripts/build.py"
+  fi
+  check_access
+
+  log "back up flash results area"
+  "$PICOTOOL" save -r "$RESULTS_START" "$RESULTS_END" "$BUILD/flash-backup.bin" >/dev/null
+
+  log "load into SRAM and run"
+  local t0=$SECONDS
+  "$PICOTOOL" load -x "$BUILD/fw.elf" -t elf >/dev/null
+  sleep 3
+  wait_bootsel
+  log "board back in BOOTSEL after $((SECONDS - t0))s"
+
+  "$PICOTOOL" save -r "$RESULTS_START" "$RESULTS_END" "$BUILD/results.bin" >/dev/null
+
+  log "restore flash results area"
+  if all_ff "$BUILD/flash-backup.bin"; then
+    "$PICOTOOL" erase -r "$RESULTS_START" "$RESULTS_END" >/dev/null
+  else
+    "$PICOTOOL" load --ignore-partitions "$BUILD/flash-backup.bin" -t bin -o "$RESULTS_START" >/dev/null
+  fi
+
+  local src sha stamp
+  src="${LLVM_SRC:-$(cd "$HERE/../.." && pwd)}"
+  sha=$(git -C "$src" rev-parse --short=12 HEAD)
+  stamp="$(date +%Y-%m-%d)-$sha"
+  mkdir -p "$HERE/results"
+  python3 "$HERE/scripts/report.py" "$BUILD/results.bin" "$BUILD/sizes.tsv" \
+    --llvm-src "$src" --raw-out "$HERE/results/$stamp.tsv" \
+    >"$HERE/results/$stamp.md"
+  log "wrote results/$stamp.md"
+}
+
+main "$@"
